@@ -11,4 +11,4 @@
     occupation varchar(35) NOT NULL,  
     age int NOT NULL,  
     PRIMARY KEY (id)  
-);  
+);

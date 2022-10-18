@@ -1,0 +1,32 @@
+Truncate statement in MySQL removes the complete data without removing its structure. It is a part of DDL or data definition language command.
+syn:TRUNCATE [TABLE] table_name
+Important:
+We cannot use the WHERE clause with this command so that filtering of records is not possible.
+
+We cannot rollback the deleted data after executing this command because the log is not maintained while performing this operation.
+We cannot use the truncate statement when a table is referenced by a foreign key or participates in an indexed view.
+
+The TRUNCATE command doesn't fire DELETE triggers associated with the table that is being truncated because it does not operate on individual rows.
+
+Working:
+RUNCATE command is more efficient as compared to the DELETE command because it removes and recreates the table instead of deleting single records one at a time
+
+mysql>CREATE TABLE student (id int Primary key NOT NULL,name varchar(100) NOT NULL, product varchar(100) DEFAULT NULL,country varchar(100) DEFAULT NULL,year int NOT NULL)
+
+mysql>INSERT INTO student(id,name,product,country,year) VALUES(1, "ankit","shorts",'india',2022),(2,'john','tv','usa',2016)
+
+## mysql>TRUNCATE TABLE student
+
+Trucate multiple table
+
+## mysql>TRUNCATE TABLE table_name1;
+
+## mysql>TRUNCATE TABLE table_name2;
+
+## mysql>TRUNCATE TABLE table_name3
+
+Truncate multiple table sql statment
+
+mysql>SELECT Concat('TRUNCATE TABLE ', TABLE_NAME)
+FROM INFORMATION_SCHEMA.TABLES  
+WHERE table_schema = 'database_name'

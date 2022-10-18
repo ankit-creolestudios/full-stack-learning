@@ -1,0 +1,5 @@
+## DESCRIBE means to show the information in detail. Since we have tables in MySQL, so we will use the DESCRIBE command to show the structure of our table, such as column names, constraints on column names, etc.
+
+## The DESC command is a short form of the DESCRIBE command. Both DESCRIBE and DESC command are equivalent and case sensitive
+
+syn: {DESCRIBE | DESC} table_name

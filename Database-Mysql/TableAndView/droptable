@@ -1,0 +1,9 @@
+## Mysql uses a Drop Table statement to delete the existing table. This statement removes the complete data of a table along with the whole structure or definition permanently from the database.
+
+## we cannot recover the lost data after deleting it
+
+syn:mysql> DROP TABLE table_name;
+
+    mysql> DROP TABLE  schema_name.table_name
+
+## mysql>DROP TABLE student

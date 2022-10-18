@@ -1,0 +1,24 @@
+## Mysql copy or clone table is a feature that allows us to create a duplicate table of an existing table, including the table structure, indexes, constraints, default values, etc.
+
+## Copying data of an existing table into a new table is very useful in a situation like backing up data in table failure.
+
+## It is also advantageous when we need to test or perform something without affecting the original tables
+
+syn: CREATE TABLE IF NOT EXISTS new_table_name  
+ SELECT column1, column2, column3  
+ FROM existing_table_name
+
+mysql>CREATE TABLE IF NOT EXISTS new_table_name  
+ SELECT column1, column2, column3  
+ FROM existing_table_name
+
+CREATE TABLE IF NOT EXISTS new_table_name  
+ SELECT column1, column2, column3  
+ FROM existing_table_name  
+ WHERE condition
+
+mysql>CREATE tABLE If NOT EXISTs studentInfos Select \* from student where year=2016
+
+## It doesn't copy all dependent objects of the table, such as indexes, triggers, primary key constraints, foreign key constraints, etc. So the command of copying data along with its dependent object
+
+syn:CREATE TABLE IF NOT EXISTS new_table_name LIKE existing_table_name;INSERT new_table_name SELECT \* FROM existing_table_name

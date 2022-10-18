@@ -1,0 +1,21 @@
+## MySQL has a feature to create a special table called a Temporary Table that allows us to keep temporary data.
+
+## We can reuse this table several times in a particular session.
+
+## MySQL deletes this table automatically as long as the current session is closed or the user terminates the connection.
+
+## We can also use the DROP TABLE command for removing this table explicitly when the user is not going to use it
+
+syn:CREATE TEMPORARY TABLE table_name (  
+ column_1, column_2, ..., table_constraints  
+)
+
+mysql>CREATE TEMPORARY TABLE Students( student_name VARCHAR(40) NOT NULL, total_marks DECIMAL(12,2) NOT NULL DEFAULT 0.00, total_subjects INT UNSIGNED NOT NULL DEFAULT 0)
+
+mysql>INSERT INTO Students(student_name, total_marks, total_subjects) VALUES ('Joseph', 150.75, 2), ('Peter', 180.75, 2)
+mysql>SELECT * FROM Students
+
+## If we wants to create a temporary table whose structure is the same as existing table in the database, then the above statement cannot be used
+
+syn:CREATE TEMPORARY TABLE temporary_table_name SELECT * FROM original_table_name LIMIT 0
+mysql>create temporary table employeetemp select * from employee limit 0

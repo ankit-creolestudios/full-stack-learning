@@ -1,17 +1,19 @@
-DISTINCT clause is used to remove duplicate records from the table and fetch only the unique records. The DISTINCT clause is only used with the SELECT statement.
+## DISTINCT clause is used to remove duplicate records from the table and fetch only the unique records. The DISTINCT clause is only used with the SELECT statement.
+
 syn:SELECT DISTINCT expressions  
-    FROM tables  
-    [WHERE conditions]; //optional
+ FROM tables  
+ [WHERE conditions]; //optional
 
 expression - specify the columns or calculations that we want to retrieve.
 
 Mysql DISTINCT clause with single expression
-If you use a single expression then the MySQL DISTINCT clause will return a single field with unique records (no duplicate record). 
+
+## If you use a single expression then the MySQL DISTINCT clause will return a single field with unique records (no duplicate record).
 
 SELECT DISTINCT age FROM employee
 
-
 Mysql DISTINCT cluase with multiple expression
-If you use multiple expressions with DISTINCT Clause then MySQL DISTINCT clause will remove duplicates from more than one field in our SELECT statement.
 
-SELECT DISTINCT name,age  FROM employee
+## If you use multiple expressions with DISTINCT Clause then MySQL DISTINCT clause will remove duplicates from more than one field in our SELECT statement.
+
+## mysql>SELECT DISTINCT name,age FROM employee
