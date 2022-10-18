@@ -5,3 +5,11 @@
 
 project directory structure
 
+2. module generate
+>nest generate module customers
+
+module inside controler generate
+>nest g controller customers/controllers/customers
+
+module service generate
+>nest g service customers/services/customers
