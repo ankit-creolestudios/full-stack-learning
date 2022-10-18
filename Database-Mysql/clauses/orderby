@@ -1,0 +1,16 @@
+The MYSQL ORDER BY Clause is used to sort the records in ascending or descending order.
+syn SELECT expressions  
+    FROM tables  
+    [WHERE conditions]  
+    ORDER BY expression [ ASC | DESC ];
+expression - column name that we want to retrieve
+
+we can use order by clause in  SELECT statement,SELECT LIMIT statement, and DELETE LIMIT statement
+
+
+Mysql order by clause
+select * from employee Order By designatiion
+
+Mysql OrderBy clause with ASC/DESC attribute
+select * from employee Order By name ASC
+select * from employee Order By name DESC

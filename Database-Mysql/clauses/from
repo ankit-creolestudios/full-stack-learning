@@ -1,0 +1,8 @@
+The MySQL FROM Clause is used to select some records from a table. It can also be used to retrieve records from multiple tables using JOIN condition.
+syn: FROM table1  
+ [ { INNER JOIN | LEFT [OUTER] JOIN| RIGHT [OUTER] JOIN } table2  
+ ON table1.column1 = table2.column1 ]
+
+If we are using the FROM clause in a MySQL statement then at least one table must have been selected.
+
+If we are using two or more tables in the MySQL FROM clause, these tables are generally joined using INNER or OUTER joins.

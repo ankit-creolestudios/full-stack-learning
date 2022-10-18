@@ -1,0 +1,7 @@
+1. install and create nestjs project
+>npm i -g @nestjs/cli
+>nest new project-name
+
+
+project directory structure
+

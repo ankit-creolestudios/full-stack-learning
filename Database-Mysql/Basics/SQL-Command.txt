@@ -1,0 +1,28 @@
+1. basic database 
+show database in system
+>show databases
+-------------------
+
+create database
+>create database database_name
+
+use particular database
+>use database_name
+
+remove database
+>drop database database_name
+>drop schema database_name
+
+database table
+
+>SHOW TABLES
+>CREATE TABLE table_name(  
+    column_definition1,  
+    column_definition2,  
+    ........,  
+    table_constraints  
+);
+
+Alter table 
+
+>ALTER TABLE table_name

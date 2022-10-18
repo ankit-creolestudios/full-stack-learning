@@ -1,0 +1,21 @@
+1.new column in table
+syn: ALTER TABLE table_name  
+     ADD new_column_name column_definition  
+     [ FIRST | AFTER column_name ];
+     table_name : the name of the table that we want to modify
+ALTER TABLE employee ADD mobile INT NOT NULL
+
+2. new multiple column in table
+syn: ALTER TABLE table_name  
+     ADD new_column_name column_definition  
+     [ FIRST | AFTER column_name ],  
+     ADD new_column_name column_definition  
+     [ FIRST | AFTER column_name ],  
+     ...  
+     ;
+ALTER TABLE employee ADD countrycode VARCHAR(10) NOT NULL,ADD countryName VARCHAR(100) NOT NULL
+
+3. modify column in table
+The MODIFY command is used to change the column definition of the table
+
+ALTER TABLE employee MODIFY countrycode VARCHAR(11) NOT NULL

@@ -1,0 +1,2 @@
+mysql run in terminal
+>mysql -u root -p

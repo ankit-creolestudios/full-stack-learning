@@ -1,0 +1,14 @@
+where clause is used for filter the result.it is used with select,insert,update and delete.
+
+syn: WHERE conditions;
+conditions - it specifies condition that must be fullfiled for record must be selected
+
+WHERE clause with AND
+
+SELECT * FROM employee WHERE designatiion="pilot" AND age>25
+
+WHERE clause with OR
+SELECT * FROM employee WHERE designatiion="pilot" OR age>25
+
+WHERE clause with AND and OR
+SELECT * FROM employee WHERE (designatiion="pilot" AND id>1) OR age>25

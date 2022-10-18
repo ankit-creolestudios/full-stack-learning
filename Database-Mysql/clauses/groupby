@@ -1,0 +1,16 @@
+The MYSQL GROUP BY Clause is used to collect data from multiple records and group the result by one or more column. It is generally used in a SELECT statement.
+syn SELECT expression1, expression2, ... expression_n,   
+    FROM tables  
+    GROUP BY expression1, expression2, ... expression_n;
+
+SELECT name FROM employee GROUP BY designatiion
+
+syn agregate function
+
+    SELECT expression1, expression2, ... expression_n,   
+    aggregate_function (expression)  
+    FROM tables  
+    [WHERE conditions]  
+    GROUP BY expression1, expression2, ... expression_n
+
+SELECT name COUNT(*) FROM employee GROUP BY name
