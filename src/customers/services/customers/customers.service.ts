@@ -10,19 +10,17 @@ export class CustomersService {
       id: 1,
       name: 'ankit kumar',
       email: 'ankit.kumar@creolestudios.com',
+      createdAt: new Date(),
     },
     {
       id: 2,
       name: 'john doe',
       email: 'john.doe@creolestudios.com',
+      createdAt: new Date(),
     },
   ];
   customerDetail() {
-    return {
-      id: 1,
-      email: 'ankit.kumar@creolestudios.com',
-      createdAt: new Date(),
-    };
+    return this.users;
   }
   customerById(id: number) {
     return this.users.find((user) => user.id === id);
