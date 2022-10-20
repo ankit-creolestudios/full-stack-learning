@@ -3,6 +3,7 @@ import { CustomersModule } from './customers/customers.module';
 import { UsersModule } from './users/users.module';
 import { TodoModule } from './todo/todo.module';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
 
 const ormOptions: TypeOrmModuleOptions = {
   type: 'mysql',
@@ -20,6 +21,7 @@ const ormOptions: TypeOrmModuleOptions = {
     UsersModule,
     TodoModule,
     TypeOrmModule.forRoot(ormOptions),
+    AuthModule,
   ],
   controllers: [],
   providers: [],
