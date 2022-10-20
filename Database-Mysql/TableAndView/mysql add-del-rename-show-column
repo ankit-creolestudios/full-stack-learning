@@ -1,0 +1,88 @@
+1. mysql add column
+
+A column is a series of cells in a table that may contain text, numbers, and images. Every column stores one value for each row in a table
+MySQL allows the ALTER TABLE ADD COLUMN command to add a new column to an existing table. The following are the syntax
+
+syn:ALTER TABLE table_name  
+ ADD COLUMN column_name column_definition [FIRST|AFTER existing_column]
+
+mysql>ALTER TABLE studentInfo ADD COLUMN phone varchar(20) NOT NULL AFTER name
+
+## multiple column add
+
+syn:ALTER TABLE table_name  
+ ADD COLUMN column_name1 column_definition [FIRST|AFTER existing_column],  
+ ADD COLUMN column_name2 column_definition [FIRST|AFTER existing_column]
+mysql>ALTER TABLE studentInfo ADD COLUMN phone varchar(20) NOT NULL AFTER name, ADD COLUMN pincode varchar(11) NOT NULL AFTER product
+
+2. Mysql drop column
+
+Mysql allows the ALTER TABLE DROP COLUMN statement to delete the column from the table
+syn:ALTER TABLE table_name DROP COLUMN column_name
+
+mysql>ALTER TABLE studentInfo DROP COLUMN phone
+
+## mysql drop multiple table
+
+syn:ALTER TABLE table_name  
+DROP COLUMN column_1,  
+DROP COLUMN column_2
+
+mysql>ALTER TABLE studentInfo DROP COLUMN phone,DROP COLUMN name
+
+3. Mysql show column
+   Mysql column in the table are a series of cells that can stores text, numbers, and images. Every column stores one value for each row in a table
+
+syn:SHOW COLUMNS FROM mytable_name FROM mydb_name
+or
+SHOW COLUMNS FROM mydb_name.mytable_name
+
+mysql>show columns from studentInfo
+
+## If we want to filter the columns of a table, we need to use the LIKE or WHERE clause in the statement
+
+mysql>show columns from studentInfo LIKE "p%"
+
+## If we want to display hidden column information, we need to add the FULL keyword to the SHOW COLUMNS statement
+
+mysql>show full columns from studentInfo
+type:It indicates the data type of each column.
+
+Collation: It is used to sequence the order of a specific character set. Here it indicates the string column for non-binary values and NULL for other columns. We will see this column only when we use the FULL keyword.
+
+Null: It indicates the nullability of a column. If a column can store NULL values, it returns YES. And if a column cannot store NULL value, it contains NO value.
+
+Key: It indicates the indexing of the columns as PRI, UNI, and MUL. Let us understand this field in detail.
+
+    If we have not specified any key, it means the column is not indexed. Otherwise, index as a secondary column in a multiple-column.
+    If the column is specified as a PRI, it means the column is a PRIMARY KEY or one of the fields in a multiple-column PRIMARY KEY.
+    If the column is specified as a UNI, it means the column contains a UNIQUE index.
+    If the column is specified as a MUL, it means the column is the first column of a non-unique index where we can use a given value multiple times.
+    If the column is specified by more than one key-value, this field displays the key which has the highest priority (the key priority is in the order of PRI, UNI, and MUL).
+
+Default: It indicates the default value to the column. If the column includes no DEFAULT clause or has an explicit NULL default, it contains a NULL value.
+
+Extra: It indicates the additional information related to a given column. This field is non-empty in the following cases:
+
+    If the column is specified with the AUTO_INCREMENT attribute, its value is filled with auto_increment.
+    If the column is specified with TIMESTAMP or DATETIME that have the ON UPDATE CURRENT_TIMESTAMP attribute, its value is filled with on update CURRENT_TIMESTAMP.
+    For the generated columns, its value filled with VIRTUAL GENERATED or VIRTUAL STORED.
+
+    If the column contains an expression default value, its value is filled with DEFAULT_GENERATED.
+
+Privileges: It indicates the privileges that we have for the column. We will see this column only when we use the FULL keyword.
+
+Comment: It indicates the comment that we have included in the column definition. We will see this column only when we use the FULL keyword
+
+## Mysql describe statemen
+
+syn:{DESCRIBE | DESC} table_name
+mysql>describe studentInfo
+
+4. Mysql rename column
+
+syn:ALTER TABLE table_name  
+ CHANGE COLUMN old_column_name new_column_name Data Type
+
+All information of column attributes might not be available to the application for renaming.
+There is a risk of accidental data type change that might result in the application's data loss.

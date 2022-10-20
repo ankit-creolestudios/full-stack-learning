@@ -22,3 +22,4 @@ mysql>CREATE tABLE If NOT EXISTs studentInfos Select \* from student where year=
 ## It doesn't copy all dependent objects of the table, such as indexes, triggers, primary key constraints, foreign key constraints, etc. So the command of copying data along with its dependent object
 
 syn:CREATE TABLE IF NOT EXISTS new_table_name LIKE existing_table_name;INSERT new_table_name SELECT \* FROM existing_table_name
+mysql>CREATE TABLE IF NOT EXISTS studentInfo LIKE student;INSERT studentInfo select \* from student

@@ -1,0 +1,29 @@
+## MySQL Repair Table allows us to repair or fix the corrupted table.
+
+## The repair table in MySQL provides support only for selected storage engines, not for all. It is to ensure that we have a few privileges like SELECT and INSERT to use this statement.
+
+## Normally, we should never use the repair table until disastrous things happen with the table. This statement rarely gets all data from the MyISAM table.
+
+## Therefore, we need to find why our table is corrupted to eliminate the use of this statement
+
+working:
+
+## When we execute the REPAIR TABLE statement, it first checks the table that we are going to repair is required an upgradation or not. If required, it will perform upgradation with the same rules as CHECK TABLE ... FOR UPGRADE statement works.
+
+## It is always good to keep our table's backup before performing the "table repair" option because it might cause a loss of our data
+
+syn:REPAIR [NO_WRITE_TO_BINLOG | LOCAL]  
+ TABLE tbl_name [, tbl_name] ...  
+ [QUICK] [EXTENDED] [USE_FRM]
+
+NO_WRITE_TO_BINLOG or LOCAL: It's a place where the server is responsible for writing the REPAIR TABLE statements for the replication slaves. We can optionally specify the optional NO_WRITE_TO_BINLOG/LOCAL keyword to suppress the logging
+QUICK: The quick option allows the REPAIR TABLE statement for repairing only the index file. It does not allow to repair of the data file. This type of repair gives the same result as the myisamchk --recover -quick command works
+EXTENDED: Instead of creating the index row by row, this option allows MySQL to create one index at a time with sorting. This type of repair gives the same result as the myisamchk --safe-recover command works
+
+USE_FRM: This option is used when the .MYI index file is not found or if its header is corrupted. The USE-FRM option informs MySQL to do not trust the information present in this file header and re-create it by using the information provided from the data dictionary. This type of repair cannot work with the myisamchk command
+
+Storage Engine and Partitioning Support with Repair Table
+
+## We have mentioned earlier that the repair table does not work for all storage engines. It supports only MyISAM, ARCHIVE, and CSV tables. The repair table statement does not support views
+
+## We can also use the repair table statement for partitioned tables. But, here, we cannot use the USE_FRM option with this statement. If we want to repair multiple partitions, we can use the ALTER TABLE ... REPAIR PARTITION statement
