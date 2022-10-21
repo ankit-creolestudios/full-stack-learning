@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, OneToMany, PrimaryColumn } from 'typeorm';
+import { UserEntity } from './user.entity';
 
 @Entity('todo')
 export class TodoEntity {
@@ -10,6 +11,11 @@ export class TodoEntity {
   description: string;
   @Column()
   status: TodoStatus;
+
+  @ManyToOne(() => UserEntity, (user) => user.todo)
+  user: UserEntity;
+  @Column()
+  userId: number;
 }
 
 export enum TodoStatus {
