@@ -1,0 +1,40 @@
+sql function
+i. single row function
+
+ii. muliple row function
+  a. aggregate function
+
+    average - This function returns the average of its argument
+   
+
+    mysql>select avg(salary) from employee
+-------------------------------------------------------------------------
+    sum - This functions returns the sum value of its argument
+    
+    mysql>select sum(salary) from employee
+
+    display salary of employee have employee code between 101 to 103
+
+    mysql>select sum(salary) from employee where employeecode between 101 AND 103
+-------------------------------------------------------------------------------------
+
+    max - This functions returns the max value of its argument
+    
+    mysql>Select max(salary) from employee
+
+    display records og the employee geting maximum salary
+    mysql>select * from employee where salary= (select max(salary) from employee)
+-------------------------------------------------------------------------------------
+    min - This functions returns the min value of its argument
+
+    mysql>Select max(salary) from employee
+
+    display records og the employee geting leser salary
+    mysql>select * from employee where salary= (select max(salary) from employee)
+-------------------------------------------------------------------------------------
+
+    count - This function return toal number of rows or counting of values in givent column (NOT NULL)
+
+    mysql>select * from employee
+    mysql>Select count (salary) from employee
+-------------------------------------------------------------------------------------

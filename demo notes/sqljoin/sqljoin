@@ -1,0 +1,19 @@
+Sql Joins- when we have to extract data from two or more tables then we use the concept of join.
+or Join is a query.
+
+if we want to join two or more tables then we have one common column have holding same data with same or different column name.
+
+types of join
+
+i. unrestricted join
+   a. when we are joining two or more tables without joining condition.
+   b. cartesion product
+
+   the Cartesian Product of sets A and B is defined as the set of all ordered pairs (x, y) such that x belongs to A and y belongs to B. For example, if A = {1, 2} and B = {3, 4, 5}, then the Cartesian Product of A and B is {(1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5)}.
+
+ii. restricted join
+   a. when we are joining two or more tables with a join condition.
+   b. return proper data
+
+----------------------------------------------------------------------------------------------------
+i. Equi Join - when we join tables using the equality operator.

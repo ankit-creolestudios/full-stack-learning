@@ -1,0 +1,20 @@
+MySQL primary key is a single or combination of the field, which is used to identify each record in a table uniquely. If the column contains primary key constraints, then it cannot be null
+
+# Primary key
+i. It is a single or combination of the field, which is used to identify each record in a table uniquely
+
+ii. It does not allow to store a NULL value into the primary key column.
+
+iii. A table can have only one primary key.
+
+iv. It create a clustered index.
+
+
+# unique key
+
+i. It also determines each row of the table uniquely in the absence of a primary key
+
+ii. It can accept only one NULL value into the unique key column
+iii. A table can have more than one unique key.
+
+iv. It creates a non-clustered index

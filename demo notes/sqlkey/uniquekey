@@ -1,0 +1,27 @@
+Unique key
+A unique key in mysql is a single field or combination of fields that ensure all values going to store into the column will be unique.
+
+needs of unique key
+--------------------
+    it is useful in preventing the two records from storing identical values into the column.
+
+    it stores only distinct values that maintain the integrity and reliability of the database for accessing the information in a organised way.
+
+    it also works with a foreign key in preserving the uniqueness of a table
+
+    it can contain null value into the table.
+
+syntax
+  CREATE TABLE table_name(
+    col1 datatype,
+    col2 datatype UNIQUE
+  )
+
+  more than one unique key column into table
+  CREATE TABLE table_name(
+    col1 col_definition,  
+    col2 col_definition,  
+    ...  
+    [CONSTRAINT constraint_name]  
+    UNIQUE(column_name(s))  
+  )
